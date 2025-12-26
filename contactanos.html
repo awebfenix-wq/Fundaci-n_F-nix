@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Fundación Fénix LPB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img_fenix/Fenix_logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="logo-img">
+                <div class="logo-text">Fundación<span>Fénix</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-la-fundacion.html" class="nav-link">Nosotros</a></li>
+                <li><a href="adopta_un_amigo.html" class="nav-link">Adopta</a></li>
+                <li><a href="voluntariado.html" class="nav-link">Voluntariado</a></li>
+                <li><a href="ayuda.html" class="nav-link">Ayuda</a></li>
+                <li><a href="contactanos.html" class="nav-link active">Contacto</a></li>
+                <li>
+                    <a href="adopta_un_amigo.html" class="adopt-float-btn">
+                        <i class="fas fa-paw"></i> ADOPTA
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content container">
+            <h1 class="fade-in-up shimmer-text">Estamos para Ayudarte</h1>
+            <p class="fade-in-up">¿Tienes preguntas sobre adopciones, donaciones o quieres reportar un animal en situación de riesgo? Contáctanos.</p>
+        </div>
+    </section>
+
+    <!-- Información de Contacto y Formulario -->
+    <section class="container">
+        <div class="contact-content">
+            <!-- Formulario -->
+            <div class="contact-form">
+                <h2 class="shimmer-text">Envíanos un Mensaje</h2>
+                <p>Te responderemos en menos de 24 horas.</p>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombreContacto"><i class="fas fa-user"></i> Nombre Completo *</label>
+                        <input type="text" id="nombreContacto" name="nombreContacto" required placeholder="Tu nombre completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emailContacto"><i class="fas fa-envelope"></i> Correo Electrónico *</label>
+                        <input type="email" id="emailContacto" name="emailContacto" required placeholder="correo@ejemplo.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefonoContacto"><i class="fas fa-phone"></i> Teléfono</label>
+                        <input type="tel" id="telefonoContacto" name="telefonoContacto" placeholder="+591 XXX XXXXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto"><i class="fas fa-question-circle"></i> Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Seleccionar asunto</option>
+                            <option value="adopcion">Información sobre adopción</option>
+                            <option value="donacion">Información sobre donaciones</option>
+                            <option value="voluntariado">Quiero ser voluntario</option>
+                            <option value="reporte">Reportar animal en riesgo</option>
+                            <option value="visita">Visita al refugio</option>
+                            <option value="castracion">Información sobre esterilización</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensajeContacto"><i class="fas fa-comment"></i> Mensaje *</label>
+                        <textarea id="mensajeContacto" name="mensajeContacto" rows="5" required placeholder="Describe tu consulta o situación..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Información de Contacto -->
+            <div class="contact-info-section">
+                <div class="help-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h3>
+                    <p><strong>La Paz, Bolivia</strong></p>
+                    <p>Refugio de animales Fundación FÉNIX LPB</p>
+                </div>
+                
+                <div class="help-card">
+                    <h3><i class="fas fa-phone"></i> Teléfonos de Contacto</h3>
+                    <p><strong>WhatsApp Principal:</strong> +591 76560084</p>
+                    <p><strong>Emergencias animales:</strong> +591 76560084</p>
+                    <p><strong>Adopciones y consultas:</strong> +591 76560084</p>
+                </div>
+                
+                <div class="help-card">
+                    <h3><i class="fas fa-envelope"></i> Correos Electrónicos</h3>
+                    <p><strong>General:</strong> fundacionfenixlpb@gmail.com</p>
+                    <p><strong>Adopciones:</strong> fundacionfenixlpb@gmail.com</p>
+                    <p><strong>Donaciones:</strong> fundacionfenixlpb@gmail.com</p>
+                </div>
+                
+                <div class="help-card">
+                    <h3><i class="fab fa-whatsapp"></i> Contacto Rápido por WhatsApp</h3>
+                    <p>Para consultas inmediatas, escríbenos por WhatsApp:</p>
+                    <a href="https://wa.me/59176560084" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+                    </a>
+                </div>
+                
+                <div class="help-card">
+                    <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+                    <p><strong>Refugio:</strong> Lunes a Domingo: 9:00 AM - 6:00 PM</p>
+                    <p><strong>Atención telefónica:</strong> Lunes a Domingo: 8:00 AM - 8:00 PM</p>
+                    <p><strong>Emergencias:</strong> 24/7 (solo casos graves)</p>
+                </div>
+                
+                <!-- Redes Sociales -->
+                <div class="help-card social-card">
+                    <h3><i class="fas fa-share-alt"></i> Síguenos en Redes</h3>
+                    <div class="social-buttons">
+                        <a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" 
+                           class="btn btn-secondary" 
+                           target="_blank">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/fundacion_fenix_lpb/" 
+                           class="btn btn-secondary" 
+                           target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información de Emergencias -->
+        <div class="requirements emergency-section">
+            <h2 class="shimmer-text"><i class="fas fa-exclamation-triangle"></i> ¿Cómo reportar un animal en situación de riesgo?</h2>
+            
+            <div class="emergency-procedure">
+                <h3>Procedimiento para reportes:</h3>
+                <ol>
+                    <li><strong>Identifica la situación:</strong> Maltrato, abandono, accidente, enfermedad visible</li>
+                    <li><strong>Toma fotos o video:</strong> Si es seguro hacerlo</li>
+                    <li><strong>Ubicación exacta:</strong> Dirección, puntos de referencia</li>
+                    <li><strong>Descripción del animal:</strong> Tamaño, color, condición aparente</li>
+                    <li><strong>Contacta inmediatamente:</strong> WhatsApp +591 76560084</li>
+                </ol>
+                
+                <div class="emergency-contact">
+                    <h4><i class="fas fa-phone-alt"></i> Línea de Emergencia</h4>
+                    <p class="emergency-number">+591 76560084</p>
+                    <p><em>Para casos de emergencia animal grave (atropellos, maltrato extremo, peligro inminente)</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARRUSEL DE PREGUNTAS FRECUENTES -->
+        <div class="auto-scroll-section faq-section">
+            <div class="section-title">
+                <h2 class="shimmer-text">Preguntas Frecuentes</h2>
+                <p>Respuestas rápidas a las preguntas más comunes</p>
+            </div>
+            
+            <div class="auto-scroll-wrapper faq-auto">
+                <div class="auto-scroll-container">
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Cómo adopto?</h4>
+                        <p>Visita nuestra sección de adopciones, elige a tu amigo ideal y completa el formulario. Te contactaremos para coordinar una visita.</p>
+                        <a href="adopta_un_amigo.html" class="btn btn-secondary">
+                            <i class="fas fa-heart"></i> Ver animales para adopción
+                        </a>
+                    </div>
+                    
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Puedo visitar el refugio?</h4>
+                        <p>Sí, con cita previa. Contáctanos para coordinar una visita y conocer a nuestros animales.</p>
+                        <button class="btn btn-secondary" onclick="scrollToForm()">
+                            <i class="fas fa-calendar"></i> Solicitar visita
+                        </button>
+                    </div>
+                    
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Aceptan donaciones en especie?</h4>
+                        <p>¡Sí! Alimentos, medicinas, cobijas y juguetes son siempre bienvenidos. Revisa nuestra sección de ayuda para más detalles.</p>
+                        <a href="ayuda.html" class="btn btn-secondary">
+                            <i class="fas fa-hand-holding-heart"></i> Ver cómo ayudar
+                        </a>
+                    </div>
+                    
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Ofrecen esterilizaciones?</h4>
+                        <p>Sí, realizamos campañas de esterilización masiva gratuita. Contáctanos para información sobre próximas jornadas.</p>
+                        <button class="btn btn-secondary" onclick="setCastrationSubject()">
+                            <i class="fas fa-stethoscope"></i> Información esterilización
+                        </button>
+                    </div>
+                    
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Cómo puedo ser voluntario?</h4>
+                        <p>Completa nuestro formulario de voluntariado o contáctanos directamente. Necesitamos personas comprometidas con los animales.</p>
+                        <a href="voluntariado.html" class="btn btn-secondary">
+                            <i class="fas fa-hands-helping"></i> Más sobre voluntariado
+                        </a>
+                    </div>
+                    
+                    <div class="faq-auto-card">
+                        <h4><i class="fas fa-question-circle"></i> ¿Qué debo hacer si encuentro un animal herido?</h4>
+                        <p>Contacta inmediatamente nuestra línea de emergencia, proporciona ubicación exacta y, si es seguro, toma fotos para evaluar la situación.</p>
+                        <button class="btn btn-secondary emergency-btn" onclick="setReportSubject()">
+                            <i class="fas fa-exclamation-triangle"></i> Reportar emergencia
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-footer">
+                <p><i class="fas fa-info-circle"></i> Resuelve tus dudas rápido: adopciones, visitas, donaciones y esterilizaciones, todo en un solo lugar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Actualizado con Logo -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fundación Fénix LPB</h3>
+                    <p>Refugio de animales - Rescatando, rehabilitando y encontrando hogares para animales necesitados desde hace más de 13 años.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/59176560084" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:fundacionfenixlpb@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="sobre-la-fundacion.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                        <li><a href="adopta_un_amigo.html"><i class="fas fa-heart"></i> Adopciones</a></li>
+                        <li><a href="voluntariado.html"><i class="fas fa-hands-helping"></i> Voluntariado</a></li>
+                        <li><a href="ayuda.html"><i class="fas fa-hand-holding-heart"></i> Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> La Paz, Bolivia</li>
+                        <li><i class="fas fa-phone"></i> +591 76560084</li>
+                        <li><i class="fas fa-envelope"></i> fundacionfenixlpb@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Atención: Lunes a Domingo</li>
+                    </ul>
+                    
+                    <h3>Redes Sociales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i> @fundacion_fenix_lpb
+                        </a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook"></i> Fundación FÉNIX LPB
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo en Footer -->
+            <div class="footer-logo-container">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="fenix-logo-footer">
+                <div class="fenix-text-footer">
+                    Fundación <span>Fénix</span> LPB
+                </div>
+                <p class="fenix-slogan-footer">Transformando vidas desde 2010</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fundación Fénix LPB. Todos los derechos reservados.</p>
+                <p class="footer-sub">Refugio de animales - La Paz, Bolivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function scrollToForm() {
+            document.getElementById('asunto').value = 'visita';
+            document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        function setCastrationSubject() {
+            document.getElementById('asunto').value = 'castracion';
+            document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        function setReportSubject() {
+            document.getElementById('asunto').value = 'reporte';
+            document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

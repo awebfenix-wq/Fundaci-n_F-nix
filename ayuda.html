@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda y Donaciones - Fundación Fénix LPB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img_fenix/Fenix_logo.png">
+    <style>
+        /* Estilos adicionales específicos para la página de ayuda */
+        .help-page-hero {
+            background: linear-gradient(135deg, 
+                rgba(255, 138, 0, 0.9) 0%, 
+                rgba(227, 38, 30, 0.9) 100%),
+                url('img_fenix/Fenix_39.jpg') center/cover no-repeat;
+            animation: backgroundFlow 25s ease-in-out infinite alternate;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .impact-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.98) 100%);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--amarillo);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--amarillo), 
+                var(--naranja-brillante));
+        }
+        
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--rojo);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .impact-label {
+            font-size: 1.1rem;
+            color: var(--gris-oscuro);
+            font-weight: 600;
+        }
+        
+        .how-to-help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .help-step {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.98) 100%);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .help-step:hover {
+            transform: translateY(-8px);
+            border-color: var(--naranja-brillante);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, 
+                var(--amarillo), 
+                var(--naranja-brillante));
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-title {
+            color: var(--rojo);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .donation-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .tier-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.98) 100%);
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tier-card.popular {
+            border-color: var(--amarillo);
+            transform: scale(1.05);
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .tier-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--rojo);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .tier-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--naranja-oscuro);
+            margin: 1.5rem 0;
+        }
+        
+        .tier-amount span {
+            font-size: 1rem;
+            color: var(--gris-oscuro);
+        }
+        
+        .tier-benefits {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .tier-benefits li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--gris-claro);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .tier-benefits li:last-child {
+            border-bottom: none;
+        }
+        
+        .tier-benefits i {
+            color: var(--naranja-brillante);
+        }
+        
+        .urgent-help {
+            background: linear-gradient(135deg, 
+                rgba(227, 38, 30, 0.1) 0%,
+                rgba(255, 138, 0, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            border-left: 5px solid var(--rojo);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .urgent-help::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,10 L90,90 M90,10 L10,90" stroke="%23E3261E" stroke-width="1" stroke-opacity="0.05"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .urgent-title {
+            color: var(--rojo);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .urgent-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .urgent-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all var(--transition-base);
+        }
+        
+        .urgent-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .urgent-item i {
+            color: var(--rojo);
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .impact-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .impact-number {
+                font-size: 2.5rem;
+            }
+            
+            .donation-tiers {
+                grid-template-columns: 1fr;
+            }
+            
+            .tier-card.popular {
+                transform: none;
+            }
+            
+            .urgent-help {
+                padding: 2rem 1.5rem;
+            }
+            
+            .how-to-help-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .urgent-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="logo-img">
+                <div class="logo-text">Fundación<span>Fénix</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-la-fundacion.html" class="nav-link">Nosotros</a></li>
+                <li><a href="adopta_un_amigo.html" class="nav-link">Adopta</a></li>
+                <li><a href="voluntariado.html" class="nav-link">Voluntariado</a></li>
+                <li><a href="ayuda.html" class="nav-link active">Ayuda</a></li>
+                <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                <li>
+                    <a href="adopta_un_amigo.html" class="adopt-float-btn">
+                        <i class="fas fa-paw"></i> ADOPTA
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section Mejorado -->
+    <section class="hero help-page-hero">
+        <div class="hero-content container">
+            <h1 class="fade-in-up shimmer-text">Tu Ayuda Cambia Vidas</h1>
+            <p class="fade-in-up">Cada contribución, por pequeña que sea, nos permite seguir rescatando, alimentando y dando amor a animales necesitados. Juntos podemos hacer la diferencia.</p>
+            <div class="hero-buttons fade-in-up">
+                <a href="#donar-ahora" class="btn btn-primary btn-large">
+                    <i class="fas fa-hand-holding-heart"></i> Donar Ahora
+                </a>
+                <a href="#como-ayudar" class="btn btn-secondary btn-large">
+                    <i class="fas fa-question-circle"></i> ¿Cómo Ayudar?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas de Impacto -->
+    <section class="container">
+        <div class="section-title">
+            <h2 class="shimmer-text">Nuestro Impacto</h2>
+            <p>Gracias a personas como tú, hemos logrado transformar vidas</p>
+        </div>
+        
+        <div class="impact-stats">
+            <div class="impact-card animated-element">
+                <div class="impact-number stat-number">700+</div>
+                <div class="impact-label">Animales Esterilizados</div>
+                <p>En comunidades como Apolo, Patacamaya y San Roque</p>
+            </div>
+            
+            <div class="impact-card animated-element">
+                <div class="impact-number stat-number">150+</div>
+                <div class="impact-label">Adopciones Exitosas</div>
+                <p>Familias felices con nuevos miembros peludos</p>
+            </div>
+            
+            <div class="impact-card animated-element">
+                <div class="impact-number stat-number">13+</div>
+                <div class="impact-label">Años de Labor</div>
+                <p>Transformando vidas desde 2010</p>
+            </div>
+            
+            <div class="impact-card animated-element">
+                <div class="impact-number stat-number">5000+</div>
+                <div class="impact-label">Kilos de Alimento</div>
+                <p>Distribuidos mensualmente a animales necesitados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección ¿Cómo ayudar? MEJORADA -->
+    <section id="como-ayudar" class="container">
+        <div class="section-title">
+            <h2 class="shimmer-text">¿Cómo ayudar?</h2>
+            <p>Tu apoyo es vital para mejorar la vida de los animales rescatados. Puedes colaborar de las siguientes maneras:</p>
+        </div>
+
+        <!-- Opciones de Ayuda Mejoradas -->
+        <div class="how-to-help-grid">
+            <div class="help-step animated-element">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Donaciones Económicas</h3>
+                <p>Tu aporte económico directo nos permite cubrir gastos médicos, alimentación y cuidado diario de los animales.</p>
+                <div class="help-features">
+                    <p><i class="fas fa-check-circle" style="color: var(--naranja-brillante);"></i> Cobertura veterinaria</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--naranja-brillante);"></i> Alimentos y medicinas</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--naranja-brillante);"></i> Mantenimiento del refugio</p>
+                </div>
+                <button onclick="donarPorWhatsApp('unica')" class="btn btn-primary" style="margin-top: 1.5rem;">
+                    <i class="fas fa-donate"></i> Donar Ahora
+                </button>
+            </div>
+            
+            <div class="help-step animated-element">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Donaciones en Especie</h3>
+                <p>Se aceptan donaciones materiales que son igualmente valiosas para nuestro trabajo diario.</p>
+                <div class="help-features">
+                    <p><i class="fas fa-bone" style="color: var(--naranja-brillante);"></i> Comida para perros y gatos</p>
+                    <p><i class="fas fa-home" style="color: var(--naranja-brillante);"></i> Mantas y casitas</p>
+                    <p><i class="fas fa-pills" style="color: var(--naranja-brillante);"></i> Medicinas y primeros auxilios</p>
+                    <p><i class="fas fa-utensils" style="color: var(--naranja-brillante);"></i> Utensilios de limpieza</p>
+                </div>
+                <button onclick="donarPorWhatsApp('especie')" class="btn btn-primary" style="margin-top: 1.5rem;">
+                    <i class="fas fa-box-open"></i> Donar en Especie
+                </button>
+            </div>
+            
+            <div class="help-step animated-element">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Voluntariado</h3>
+                <p>Tu tiempo y energía son invaluables. Personas voluntarias colaboran en tareas esenciales como:</p>
+                <div class="help-features">
+                    <p><i class="fas fa-broom" style="color: var(--naranja-brillante);"></i> Limpieza del refugio</p>
+                    <p><i class="fas fa-heart" style="color: var(--naranja-brillante);"></i> Cuidado y alimentación</p>
+                    <p><i class="fas fa-hands-helping" style="color: var(--naranja-brillante);"></i> Apoyo en campañas</p>
+                    <p><i class="fas fa-stethoscope" style="color: var(--naranja-brillante);"></i> Asistencia en esterilizaciones</p>
+                </div>
+                <a href="voluntariado.html" class="btn btn-primary" style="margin-top: 1.5rem;">
+                    <i class="fas fa-hands-helping"></i> Ser Voluntario
+                </a>
+            </div>
+        </div>
+
+        <!-- Información adicional sobre donaciones -->
+        <div class="requirements" style="margin-top: 3rem;">
+            <h3 class="shimmer-text"><i class="fas fa-info-circle"></i> Información Importante sobre Donaciones</h3>
+            
+            <div class="urgent-list">
+                <div class="urgent-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Transparencia Total</h4>
+                        <p>Rendimos cuentas mensualmente de todos los recursos recibidos</p>
+                    </div>
+                </div>
+                
+                <div class="urgent-item">
+                    <i class="fas fa-receipt"></i>
+                    <div>
+                        <h4>Comprobantes Oficiales</h4>
+                        <p>Emitimos recibos deducibles de impuestos para todas las donaciones</p>
+                    </div>
+                </div>
+                
+                <div class="urgent-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h4>Impacto Medible</h4>
+                        <p>Podrás ver exactamente en qué se utilizó tu donación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animación de Donación Mejorada -->
+        <div class="donation-animation">
+            <h3 class="shimmer-text">¡Tu donación hace posible el milagro!</h3>
+            <div class="heart-animation">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>Cada aporte, grande o pequeño, significa alimento, medicinas y amor para un animal rescatado.</p>
+            
+            <div class="impact-stats" style="margin: 2rem 0;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--rojo); font-weight: bold;">$50</div>
+                    <p>Alimenta a 10 animales por 1 día</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--rojo); font-weight: bold;">$100</div>
+                    <p>Cubre vacunas para 2 animales</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--rojo); font-weight: bold;">$200</div>
+                    <p>Financia 1 esterilización completa</p>
+                </div>
+            </div>
+            
+            <div class="whatsapp-donation">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4>Donar por WhatsApp</h4>
+                    <p>Contacta directamente con nosotros para hacer tu donación de forma segura</p>
+                </div>
+                <a href="https://wa.me/59176560084" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contactar para Donar
+                </a>
+            </div>
+        </div>
+
+        <!-- Niveles de Donación -->
+        <div class="section-title" style="margin-top: 4rem;">
+            <h2 class="shimmer-text">Niveles de Contribución</h2>
+            <p>Elige el nivel que mejor se adapte a tus posibilidades</p>
+        </div>
+        
+        <div class="donation-tiers">
+            <div class="tier-card animated-element">
+                <div class="tier-badge" style="background: var(--amarillo); color: var(--naranja-oscuro);">Básico</div>
+                <i class="fas fa-seedling fa-3x" style="color: var(--naranja-brillante);"></i>
+                <h3>Amigo Fénix</h3>
+                <div class="tier-amount">$50<span>/mes</span></div>
+                <ul class="tier-benefits">
+                    <li><i class="fas fa-check"></i> Certificado digital de agradecimiento</li>
+                    <li><i class="fas fa-check"></i> Actualizaciones mensuales por email</li>
+                    <li><i class="fas fa-check"></i> Tu nombre en nuestro muro de donantes</li>
+                    <li><i class="fas fa-check"></i> Alimentas a 10 animales por día</li>
+                </ul>
+                <button onclick="donarPorWhatsApp('unica')" class="btn btn-primary">
+                    <i class="fas fa-heart"></i> Convertirse en Amigo
+                </button>
+            </div>
+            
+            <div class="tier-card popular animated-element">
+                <div class="tier-badge">Más Popular</div>
+                <i class="fas fa-heart fa-3x" style="color: var(--rojo);"></i>
+                <h3>Protector Fénix</h3>
+                <div class="tier-amount">$100<span>/mes</span></div>
+                <ul class="tier-benefits">
+                    <li><i class="fas fa-check"></i> Todo lo del nivel Amigo</li>
+                    <li><i class="fas fa-check"></i> Invitación a eventos especiales</li>
+                    <li><i class="fas fa-check"></i> Fotos exclusivas de los animales</li>
+                    <li><i class="fas fa-check"></i> Vacunas para 2 animales mensuales</li>
+                    <li><i class="fas fa-check"></i> Reporte trimestral de impacto</li>
+                </ul>
+                <button onclick="donarPorWhatsApp('mensual')" class="btn btn-primary">
+                    <i class="fas fa-shield-alt"></i> Convertirse en Protector
+                </button>
+            </div>
+            
+            <div class="tier-card animated-element">
+                <div class="tier-badge" style="background: var(--naranja-oscuro);">Premium</div>
+                <i class="fas fa-crown fa-3x" style="color: var(--amarillo);"></i>
+                <h3>Ángel Fénix</h3>
+                <div class="tier-amount">$200<span>/mes</span></div>
+                <ul class="tier-benefits">
+                    <li><i class="fas fa-check"></i> Todo lo del nivel Protector</li>
+                    <li><i class="fas fa-check"></i> Visita guiada al refugio</li>
+                    <li><i class="fas fa-check"></i> Nombramiento como padrino/madrina</li>
+                    <li><i class="fas fa-check"></i> Placa conmemorativa en el refugio</li>
+                    <li><i class="fas fa-check"></i> Financia 1 esterilización mensual</li>
+                    <li><i class="fas fa-check"></i> Reunión trimestral con el equipo</li>
+                </ul>
+                <button onclick="donarPorWhatsApp('mensual')" class="btn btn-primary">
+                    <i class="fas fa-crown"></i> Convertirse en Ángel
+                </button>
+            </div>
+        </div>
+
+        <!-- Ayuda Urgente -->
+        <div class="urgent-help">
+            <h3 class="urgent-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                Ayuda Urgente Necesitamos
+            </h3>
+            <p>Actualmente necesitamos con urgencia:</p>
+            
+            <div class="urgent-list">
+                <div class="urgent-item">
+                    <i class="fas fa-syringe"></i>
+                    <div>
+                        <h4>Medicinas</h4>
+                        <p>Antibióticos, antiparasitarios, analgésicos</p>
+                    </div>
+                </div>
+                
+                <div class="urgent-item">
+                    <i class="fas fa-bone"></i>
+                    <div>
+                        <h4>Alimento Premium</h4>
+                        <p>Para cachorros y animales convalecientes</p>
+                    </div>
+                </div>
+                
+                <div class="urgent-item">
+                    <i class="fas fa-tint"></i>
+                    <div>
+                        <h4>Sueros y Vitaminas</h4>
+                        <p>Para animales deshidratados y débiles</p>
+                    </div>
+                </div>
+                
+                <div class="urgent-item">
+                    <i class="fas fa-ambulance"></i>
+                    <div>
+                        <h4>Fondos para Emergencias</h4>
+                        <p>Cirugías y tratamientos especializados</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://wa.me/59176560084" class="btn btn-primary btn-large" target="_blank">
+                    <i class="fas fa-hand-holding-medical"></i> Ayudar con Urgencia
+                </a>
+            </div>
+        </div>
+
+        <!-- CARRUSEL DE DONACIONES CON SCROLL AUTOMÁTICO -->
+        <div class="requirements" style="margin-top: 4rem;">
+            <h2 class="shimmer-text">¿En qué se usa exactamente tu donación?</h2>
+            <p>Cada peso cuenta y se utiliza de manera transparente y eficiente</p>
+            
+            <div class="auto-scroll-section">
+                <div class="auto-scroll-wrapper donaciones-auto">
+                    <div class="auto-scroll-container">
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="donacion-auto-content">
+                                <h4><i class="fas fa-stethoscope" style="color: var(--naranja-brillante);"></i> Atención Veterinaria</h4>
+                                <p>Consultas, vacunas, esterilizaciones, cirugías y tratamientos especializados para animales rescatados en condiciones críticas.</p>
+                                <span class="percentage-badge">40% de los recursos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <div class="donacion-auto-content">
+                                <h4><i class="fas fa-bone" style="color: var(--naranja-brillante);"></i> Alimentación de Calidad</h4>
+                                <p>Comida nutritiva para más de 150 animales mensuales bajo nuestro cuidado, incluyendo dietas especiales para convalecientes.</p>
+                                <span class="percentage-badge">30% de los recursos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="donacion-auto-content">
+                                <h4><i class="fas fa-home" style="color: var(--naranja-brillante);"></i> Refugio y Cuidado</h4>
+                                <p>Mantenimiento de instalaciones, limpieza, camas, mantas y cuidados diarios esenciales para el bienestar animal.</p>
+                                <span class="percentage-badge">20% de los recursos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="donacion-auto-content">
+                                <h4><i class="fas fa-bullhorn" style="color: var(--naranja-brillante);"></i> Educación y Concientización</h4>
+                                <p>Jornadas de esterilización masiva, talleres educativos y campañas sobre tenencia responsable en comunidades.</p>
+                                <span class="percentage-badge">10% de los recursos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; color: var(--gris-oscuro);">
+                    <p><i class="fas fa-chart-pie"></i> 100% de tu donación se destina directamente al cuidado de los animales. Los gastos administrativos son cubiertos por separado.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Donación Simplificado -->
+        <div id="donar-ahora" class="donation-form">
+            <h2 class="shimmer-text">Haz tu Donación Hoy</h2>
+            <p>Elige la forma en que prefieres ayudar y comienza a cambiar vidas</p>
+            
+            <div class="help-options" style="margin-top: 2rem;">
+                <div class="help-card animated-element">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Donación Única</h3>
+                    <p>Ayuda inmediata con los gastos más urgentes: alimentación, medicinas y emergencias médicas.</p>
+                    <p><strong>Recomendado para:</strong> Personas que quieren ayudar de vez en cuando</p>
+                    <button class="btn btn-primary" onclick="donarPorWhatsApp('unica')">
+                        <i class="fas fa-donate"></i> Donación Única
+                    </button>
+                </div>
+                
+                <div class="help-card animated-element">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Padrinazgo Mensual</h3>
+                    <p>Conviértete en padrino/madrina y ayuda de forma constante. Recibirás actualizaciones regulares.</p>
+                    <p><strong>Recomendado para:</strong> Personas que quieren compromiso a largo plazo</p>
+                    <button class="btn btn-primary" onclick="donarPorWhatsApp('mensual')">
+                        <i class="fas fa-hand-holding-heart"></i> Ser Padrino/Madrina
+                    </button>
+                </div>
+                
+                <div class="help-card animated-element">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Donación en Especie</h3>
+                    <p>Entrega directa de alimentos, medicinas, mantas o materiales para el refugio.</p>
+                    <p><strong>Recomendado para:</strong> Empresas o personas con acceso a productos</p>
+                    <button class="btn btn-primary" onclick="donarPorWhatsApp('especie')">
+                        <i class="fas fa-truck-loading"></i> Coordinar Entrega
+                    </button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, var(--gris-claro) 0%, var(--beige) 100%); border-radius: var(--radius-lg); border-left: 5px solid var(--naranja-brillante);">
+                <h3><i class="fas fa-info-circle"></i> Información de Contacto para Donaciones</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+                    <div>
+                        <h4><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp</h4>
+                        <p style="font-size: 1.2rem; font-weight: bold;">+591 76560084</p>
+                        <p>Respuesta en menos de 24 horas</p>
+                    </div>
+                    
+                    <div>
+                        <h4><i class="fas fa-envelope" style="color: var(--naranja-brillante);"></i> Email</h4>
+                        <p style="font-size: 1.2rem; font-weight: bold;">fundacionfenixlpb@gmail.com</p>
+                        <p>Para donaciones corporativas</p>
+                    </div>
+                    
+                    <div>
+                        <h4><i class="fas fa-map-marker-alt" style="color: var(--rojo);"></i> Punto de Entrega</h4>
+                        <p style="font-size: 1.2rem; font-weight: bold;">La Paz, Bolivia</p>
+                        <p>Coordinamos la recolección</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GALERÍA CON SCROLL AUTOMÁTICO -->
+        <div class="auto-scroll-section" style="margin-top: 4rem;">
+            <div class="section-title">
+                <h2 class="shimmer-text">El Rostro de tu Generosidad</h2>
+                <p>Estos son algunos de los amigos que han renacido gracias a tu ayuda</p>
+            </div>
+            
+            <div class="auto-scroll-wrapper galeria-auto">
+                <div class="auto-scroll-container">
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_30.jpg" alt="Animal recuperado - Antes y después">
+                        <div class="image-caption">Max - Recuperado de maltrato</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_31.jpg" alt="Animal feliz en nuevo hogar">
+                        <div class="image-caption">Luna - Adoptada y feliz</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_32.jpg" alt="Proceso de rehabilitación">
+                        <div class="image-caption">Rocky - En proceso de rehabilitación</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_33.jpg" alt="Familia adoptante feliz">
+                        <div class="image-caption">Familia adoptante agradecida</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_34.jpg" alt="Voluntarios en acción">
+                        <div class="image-caption">Voluntarios trabajando</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_35.jpg" alt="Campaña de esterilización">
+                        <div class="image-caption">Campaña de esterilización</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_36.jpg" alt="Rescate en acción">
+                        <div class="image-caption">Rescate de emergencia</div>
+                    </div>
+                    <div class="galeria-auto-card scroll-snap-item">
+                        <img src="img_fenix/Fenix_37.jpg" alt="Momento de adopción">
+                        <div class="image-caption">Momento de la adopción</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; color: var(--gris-oscuro);">
+                <p><i class="fas fa-heart" style="color: var(--rojo);"></i> Cada foto representa una historia de esperanza hecha realidad gracias a ti.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Actualizado con Logo -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fundación Fénix LPB</h3>
+                    <p>Refugio de animales - Rescatando, rehabilitando y encontrando hogares para animales necesitados desde hace más de 13 años.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/59176560084" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:fundacionfenixlpb@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="sobre-la-fundacion.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                        <li><a href="adopta_un_amigo.html"><i class="fas fa-heart"></i> Adopciones</a></li>
+                        <li><a href="voluntariado.html"><i class="fas fa-hands-helping"></i> Voluntariado</a></li>
+                        <li><a href="ayuda.html"><i class="fas fa-hand-holding-heart"></i> Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> La Paz, Bolivia</li>
+                        <li><i class="fas fa-phone"></i> +591 76560084</li>
+                        <li><i class="fas fa-envelope"></i> fundacionfenixlpb@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Atención: Lunes a Domingo</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem;">Redes Sociales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i> @fundacion_fenix_lpb
+                        </a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook"></i> Fundación FÉNIX LPB
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo en Footer -->
+            <div class="footer-logo-container">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="fenix-logo-footer">
+                <div class="fenix-text-footer">
+                    Fundación <span>Fénix</span> LPB
+                </div>
+                <p class="fenix-slogan-footer">Transformando vidas desde 2010</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fundación Fénix LPB. Todos los derechos reservados.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Refugio de animales - La Paz, Bolivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

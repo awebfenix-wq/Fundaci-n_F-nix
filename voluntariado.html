@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado - Fundación Fénix LPB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img_fenix/Fenix_logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="logo-img">
+                <div class="logo-text">Fundación<span>Fénix</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-la-fundacion.html" class="nav-link">Nosotros</a></li>
+                <li><a href="adopta_un_amigo.html" class="nav-link">Adopta</a></li>
+                <li><a href="voluntariado.html" class="nav-link active">Voluntariado</a></li>
+                <li><a href="ayuda.html" class="nav-link">Ayuda</a></li>
+                <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                <li>
+                    <a href="adopta_un_amigo.html" class="adopt-float-btn">
+                        <i class="fas fa-paw"></i> ADOPTA
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1 class="fade-in-up shimmer-text">Únete como Voluntario</h1>
+            <p class="fade-in-up">Tus manos pueden hacer la diferencia. Únete a nuestro equipo y ayuda a transformar vidas.</p>
+            <div class="hero-buttons fade-in-up">
+                <a href="#formulario" class="btn btn-primary btn-large">
+                    <i class="fas fa-hand-holding-heart"></i> Quiero Ser Voluntario
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRUSEL DE VOLUNTARIADO CON SCROLL AUTOMÁTICO -->
+    <section class="container">
+        <div class="requirements">
+            <h2 class="shimmer-text">¿Qué Hace un Voluntario?</h2>
+            <p>Las personas voluntarias colaboran en tareas esenciales para el funcionamiento del refugio:</p>
+            
+            <div class="auto-scroll-section" style="margin: 3rem 0;">
+                <div class="auto-scroll-wrapper donaciones-auto">
+                    <div class="auto-scroll-container">
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-paw" style="color: var(--naranja-brillante);"></i> Cuidado Directo</h4>
+                                <p>Alimentación, paseos, limpieza y cuidado básico de los animales rescatados.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-home" style="color: var(--naranja-brillante);"></i> Apoyo en Adopciones</h4>
+                                <p>Ayuda en eventos de adopción y seguimiento de animales adoptados.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-tasks" style="color: var(--naranja-brillante);"></i> Apoyo Administrativo</h4>
+                                <p>Gestión de redes sociales, coordinación de citas y atención al público.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-stethoscope" style="color: var(--naranja-brillante);"></i> Campañas de Castración</h4>
+                                <p>Apoyo en jornadas de esterilización masiva gratuita en comunidades.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="donacion-auto-card scroll-snap-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-graduation-cap" style="color: var(--naranja-brillante);"></i> Educación Comunitaria</h4>
+                                <p>Talleres sobre tenencia responsable y cuidado animal.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Duplicados para efecto infinito -->
+                        <div class="donacion-auto-card scroll-snap-item duplicate-item">
+                            <div class="donacion-auto-image">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="donacion-auto-content" style="padding: 1.5rem;">
+                                <h4><i class="fas fa-paw" style="color: var(--naranja-brillante);"></i> Cuidado Directo</h4>
+                                <p>Alimentación, paseos, limpieza y cuidado básico de los animales rescatados.</p>
+                            </div>
+                        </div>
+                        <!-- ... más duplicados ... -->
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; color: var(--gris-oscuro);">
+                    <p><i class="fas fa-info-circle"></i> 💛 Tu tiempo puede cambiar vidas. ¡Únete y haz la diferencia!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requisitos y Beneficios -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="requirements">
+                <h2 class="shimmer-text"><i class="fas fa-clipboard-check"></i> Requisitos</h2>
+                <ul class="requirements-list">
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Mayor de 18 años (o con autorización parental)</li>
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Amor por los animales y compromiso con su bienestar</li>
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Compromiso mínimo de 2 horas semanales</li>
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Actitud positiva y trabajo en equipo</li>
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Asistir a capacitación inicial sobre cuidado animal</li>
+                    <li><i class="fas fa-check" style="color: var(--naranja-brillante);"></i> Responsabilidad y puntualidad</li>
+                </ul>
+            </div>
+            
+            <div class="requirements">
+                <h2 class="shimmer-text"><i class="fas fa-gift"></i> Beneficios</h2>
+                <ul class="requirements-list">
+                    <li><i class="fas fa-heart" style="color: var(--rojo);"></i> Satisfacción de ayudar a animales necesitados</li>
+                    <li><i class="fas fa-users" style="color: var(--naranja-brillante);"></i> Formar parte de una comunidad comprometida</li>
+                    <li><i class="fas fa-certificate" style="color: var(--amarillo);"></i> Certificado de voluntariado al completar 3 meses</li>
+                    <li><i class="fas fa-book" style="color: var(--naranja-oscuro);"></i> Capacitación en cuidado animal y primeros auxilios</li>
+                    <li><i class="fas fa-handshake" style="color: var(--naranja-brillante);"></i> Experiencia valiosa para tu CV</li>
+                    <li><i class="fas fa-smile" style="color: var(--amarillo);"></i> Ambiente de trabajo positivo y enriquecedor</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Proyecto Especial -->
+        <div class="requirements" style="margin-top: 3rem; background: linear-gradient(135deg, var(--beige) 0%, var(--amarillo-suave) 100%); border-left: 5px solid var(--naranja-brillante);">
+            <h2 class="shimmer-text"><i class="fas fa-stethoscope"></i> Proyecto Especial: "Por menos de ellos sufriendo"</h2>
+            <p>Como voluntario, serás parte esencial de nuestro principal proyecto: <strong>jornadas de esterilización masivas y gratuitas</strong> que rompen el ciclo de dolor, abandono y sobrepoblación. Llevamos esperanza a comunidades donde el acceso a servicios veterinarios es escaso o inexistente.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="text-align: center; padding: 15px; background-color: var(--blanco); border-radius: var(--radius-sm); border: 2px solid var(--amarillo);">
+                    <h3 style="color: var(--rojo);">100%</h3>
+                    <p>Gratuito para comunidades</p>
+                </div>
+                <div style="text-align: center; padding: 15px; background-color: var(--blanco); border-radius: var(--radius-sm); border: 2px solid var(--amarillo);">
+                    <h3 style="color: var(--rojo);">Sin excepciones</h3>
+                    <p>Perros y gatos, todos son bienvenidos</p>
+                </div>
+                <div style="text-align: center; padding: 15px; background-color: var(--blanco); border-radius: var(--radius-sm); border: 2px solid var(--amarillo);">
+                    <h3 style="color: var(--rojo);">Impacto real</h3>
+                    <p>Cada esterilización previene más sufrimiento</p>
+                </div>
+                <div style="text-align: center; padding: 15px; background-color: var(--blanco); border-radius: var(--radius-sm); border: 2px solid var(--amarillo);">
+                    <h3 style="color: var(--rojo);">Comunidades</h3>
+                    <p>Apolo, Patacamaya, Cañaviri, San Roque y más</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Voluntariado -->
+        <div id="formulario" class="donation-form">
+            <h2 class="shimmer-text">Formulario de Voluntariado</h2>
+            <p>Completa este formulario y nos pondremos en contacto contigo.</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpoFxpq5Bqy9oGmFdO6hG0Tu7NaBVIuMKhJcYcJVkrhKPLOw/viewform?usp=sharing&ouid=101830661559439032622" 
+                   target="_blank" 
+                   class="btn btn-primary btn-large">
+                    <i class="fas fa-file-alt"></i> Ir al Formulario de Voluntariado
+                </a>
+                <p style="margin-top: 1rem; color: var(--naranja-oscuro);">
+                    <i class="fas fa-external-link-alt"></i> Se abrirá en una nueva pestaña
+                </p>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background-color: var(--gris-claro); border-radius: var(--radius-md); border-left: 4px solid var(--naranja-brillante);">
+                <h3><i class="fas fa-info-circle"></i> Información Adicional</h3>
+                <p>También puedes contactarnos directamente:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: var(--blanco); border-radius: var(--radius-sm); border: 1px solid var(--gris-medio);">
+                        <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+                        <h4>WhatsApp</h4>
+                        <p>+591 76560084</p>
+                        <a href="https://wa.me/59176560084" class="btn btn-whatsapp" target="_blank" style="margin-top: 1rem;">
+                            <i class="fab fa-whatsapp"></i> Enviar Mensaje
+                        </a>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 1.5rem; background: var(--blanco); border-radius: var(--radius-sm); border: 1px solid var(--gris-medio);">
+                        <i class="fas fa-envelope fa-2x" style="color: var(--naranja-brillante);"></i>
+                        <h4>Email</h4>
+                        <p>fundacionfenixlpb@gmail.com</p>
+                        <a href="mailto:fundacionfenixlpb@gmail.com" class="btn btn-secondary" style="margin-top: 1rem;">
+                            <i class="fas fa-envelope"></i> Enviar Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonios de Voluntarios -->
+        <div class="requirements" style="margin-top: 4rem;">
+            <h2 class="shimmer-text">Voluntarios Compartiendo su Experiencia</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div class="testimonio-auto-card" style="height: 100%;">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MV</div>
+                        <div class="testimonial-info">
+                            <h4>María Vargas</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Ser voluntaria en Fundación Fénix ha sido una experiencia transformadora. Ver cómo los animales se recuperan y encuentran hogares es increíble."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--naranja-oscuro);">
+                        <i class="fas fa-clock"></i> Voluntaria desde 2021
+                    </p>
+                </div>
+                
+                <div class="testimonio-auto-card" style="height: 100%;">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">CP</div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Pérez</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Las campañas de esterilización en comunidades son lo más gratificante. Estamos haciendo una diferencia real en el control poblacional animal."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--naranja-oscuro);">
+                        <i class="fas fa-clock"></i> Voluntario desde 2022
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Actualizado con Logo -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fundación Fénix LPB</h3>
+                    <p>Refugio de animales - Rescatando, rehabilitando y encontrando hogares para animales necesitados desde hace más de 13 años.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/59176560084" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:fundacionfenixlpb@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="sobre-la-fundacion.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                        <li><a href="adopta_un_amigo.html"><i class="fas fa-heart"></i> Adopciones</a></li>
+                        <li><a href="voluntariado.html"><i class="fas fa-hands-helping"></i> Voluntariado</a></li>
+                        <li><a href="ayuda.html"><i class="fas fa-hand-holding-heart"></i> Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> La Paz, Bolivia</li>
+                        <li><i class="fas fa-phone"></i> +591 76560084</li>
+                        <li><i class="fas fa-envelope"></i> fundacionfenixlpb@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Atención: Lunes a Domingo</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem;">Redes Sociales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i> @fundacion_fenix_lpb
+                        </a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook"></i> Fundación FÉNIX LPB
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo en Footer -->
+            <div class="footer-logo-container">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="fenix-logo-footer">
+                <div class="fenix-text-footer">
+                    Fundación <span>Fénix</span> LPB
+                </div>
+                <p class="fenix-slogan-footer">Transformando vidas desde 2010</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fundación Fénix LPB. Todos los derechos reservados.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Refugio de animales - La Paz, Bolivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

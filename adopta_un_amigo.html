@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta un Amigo - Fundación Fénix LPB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img_fenix/Fenix_logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="logo-img">
+                <div class="logo-text">Fundación<span>Fénix</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-la-fundacion.html" class="nav-link">Nosotros</a></li>
+                <li><a href="adopta_un_amigo.html" class="nav-link active">Adopta</a></li>
+                <li><a href="voluntariado.html" class="nav-link">Voluntariado</a></li>
+                <li><a href="ayuda.html" class="nav-link">Ayuda</a></li>
+                <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                <li>
+                    <a href="adopta_un_amigo.html" class="adopt-float-btn">
+                        <i class="fas fa-paw"></i> ADOPTA
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="adoption-hero">
+        <div class="hero-content container">
+            <h1 class="fade-in-up shimmer-text">Encuentra a tu Compañero Ideal</h1>
+            <p class="fade-in-up">Cada uno de nuestros amigos tiene una historia única y está listo para llenar tu hogar de amor. ¡Dales una segunda oportunidad!</p>
+            <div class="hero-buttons fade-in-up">
+                <a href="#animalsGrid" class="btn btn-primary btn-large">
+                    <i class="fas fa-heart"></i> Ver Amigos Disponibles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="container">
+        <div class="adoption-filters">
+            <button class="filter-btn active" data-filter="todos">
+                <i class="fas fa-paw"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="Perro">
+                <i class="fas fa-dog"></i> Perros
+            </button>
+            <button class="filter-btn" data-filter="Gato">
+                <i class="fas fa-cat"></i> Gatos
+            </button>
+            <button class="filter-btn" data-filter="Otros">
+                <i class="fas fa-dove"></i> Otros
+            </button>
+        </div>
+
+        <!-- Grid de Animales -->
+        <div id="animalsGrid" class="animals-grid-adoption">
+            <!-- Los animales se cargarán aquí dinámicamente -->
+            
+            <!-- Estado de carga -->
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando nuestros amigos disponibles...</p>
+            </div>
+            
+            <!-- Sin resultados -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No hay animales disponibles en esta categoría</h3>
+                <p>Prueba con otro filtro o revisa más tarde.</p>
+            </div>
+        </div>
+
+        <!-- Información de Adopción -->
+        <div class="requirements">
+            <h2 class="shimmer-text">Proceso de Adopción</h2>
+            <ul class="requirements-list">
+                <li><i class="fas fa-clipboard-check"></i> <strong>Paso 1:</strong> Conoce a nuestros animales disponibles</li>
+                <li><i class="fas fa-heart"></i> <strong>Paso 2:</strong> Solicita la adopción del que más te guste</li>
+                <li><i class="fas fa-home"></i> <strong>Paso 3:</strong> Entrevista y visita domiciliaria</li>
+                <li><i class="fas fa-file-contract"></i> <strong>Paso 4:</strong> Firma de contrato de adopción responsable</li>
+                <li><i class="fas fa-dog"></i> <strong>Paso 5:</strong> ¡Lleva a tu nuevo amigo a casa!</li>
+            </ul>
+            
+            <div class="requirements adoption-details">
+                <h3 class="shimmer-text"><i class="fas fa-info-circle"></i> Información Importante</h3>
+                <p>Todos nuestros animales son entregados:</p>
+                <ul class="requirements-list">
+                    <li><i class="fas fa-check"></i> Con compromiso de esterilización/castración</li>
+                    <li><i class="fas fa-check"></i> Desparasitados</li>
+                    <li><i class="fas fa-check"></i> Vacunados según su edad</li>
+                    <li><i class="fas fa-check"></i> Con evaluación de salud completa</li>
+                </ul>
+            </div>
+            
+            <div class="cta-button">
+                <a href="contactanos.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-question-circle"></i> ¿Preguntas sobre adopción?
+                </a>
+            </div>
+        </div>
+
+        <!-- Beneficios de Adoptar -->
+        <section class="featured-animals">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="shimmer-text">¿Por qué adoptar?</h2>
+                    <p>Beneficios de darle un hogar a un animal rescatado</p>
+                </div>
+                
+                <div class="animals-grid">
+                    <div class="animal-card animated-element">
+                        <div class="animal-info">
+                            <h3><i class="fas fa-heartbeat"></i> Salvas una Vida</h3>
+                            <p>Le das una segunda oportunidad a un animal que ha sufrido abandono o maltrato.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="animal-card animated-element">
+                        <div class="animal-info">
+                            <h3><i class="fas fa-home"></i> Animal Sano</h3>
+                            <p>Recibes un compañero esterilizado, vacunado y con atención veterinaria completa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="animal-card animated-element">
+                        <div class="animal-info">
+                            <h3><i class="fas fa-users"></i> Amor Incondicional</h3>
+                            <p>Los animales rescatados suelen ser especialmente agradecidos y leales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARRUSEL DE ADOPCIONES EXITOSAS -->
+        <div class="requirements" style="margin-top: 4rem;">
+            <h2 class="shimmer-text">Historias de Éxito</h2>
+            <p>Conoce algunas de las historias más bonitas de adopción</p>
+            
+            <div class="auto-scroll-section">
+                <div class="auto-scroll-wrapper testimonios-auto">
+                    <div class="auto-scroll-container">
+                        <div class="testimonio-auto-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar"><img src="img_fenix/Fenix_33.jpg" alt="Familia feliz"></div>
+                                <div class="testimonial-info">
+                                    <h4>Familia Martínez</h4>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Adoptamos a Rocky hace 6 meses y ha transformado nuestra familia. Es el mejor compañero que podríamos desear."</p>
+                        </div>
+                        
+                        <div class="testimonio-auto-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar"><img src="img_fenix/Fenix_35.jpg" alt="Adopción exitosa"></div>
+                                <div class="testimonial-info">
+                                    <h4>Ana y Pedro</h4>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"El proceso de adopción fue muy profesional. Luna llegó a nuestras vidas y llenó nuestro hogar de alegría."</p>
+                        </div>
+                        
+                        <div class="testimonio-auto-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar"><img src="img_fenix/Fenix_37.jpg" alt="Nueva familia"></div>
+                                <div class="testimonial-info">
+                                    <h4>Familia Rodríguez</h4>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Max llegó como un miembro más de la familia desde el primer día. Gracias por darnos esta oportunidad."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Actualizado con Logo -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fundación Fénix LPB</h3>
+                    <p>Refugio de animales - Rescatando, rehabilitando y encontrando hogares para animales necesitados desde hace más de 13 años.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/59176560084" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:fundacionfenixlpb@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="sobre-la-fundacion.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                        <li><a href="adopta_un_amigo.html"><i class="fas fa-heart"></i> Adopciones</a></li>
+                        <li><a href="voluntariado.html"><i class="fas fa-hands-helping"></i> Voluntariado</a></li>
+                        <li><a href="ayuda.html"><i class="fas fa-hand-holding-heart"></i> Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> La Paz, Bolivia</li>
+                        <li><i class="fas fa-phone"></i> +591 76560084</li>
+                        <li><i class="fas fa-envelope"></i> fundacionfenixlpb@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Atención: Lunes a Domingo</li>
+                    </ul>
+                    
+                    <h3>Redes Sociales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/fundacion_fenix_lpb/" target="_blank">
+                            <i class="fab fa-instagram"></i> @fundacion_fenix_lpb
+                        </a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100071884842595&locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook"></i> Fundación FÉNIX LPB
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo en Footer -->
+            <div class="footer-logo-container">
+                <img src="img_fenix/logo.png" alt="Logo Fundación Fénix" class="fenix-logo-footer">
+                <div class="fenix-text-footer">
+                    Fundación <span>Fénix</span> LPB
+                </div>
+                <p class="fenix-slogan-footer">Transformando vidas desde 2010</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fundación Fénix LPB. Todos los derechos reservados.</p>
+                <p class="footer-sub">Refugio de animales - La Paz, Bolivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
