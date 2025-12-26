@@ -113,7 +113,7 @@ pyshp==2.3.1
 python-box==7.3.2
 python-dateutil==2.9.0.post0
 pytz==2025.1
-pywin32==310
+pywin32==324
 pyzmq==26.4.0
 ratelim==0.1.6
 referencing==0.36.2
@@ -155,4 +155,6 @@ widgetsnbextension==4.0.14
 windows-curses==2.4.1
 xarray==2025.1.2
 xyzservices==2025.1.0
+
+
 
